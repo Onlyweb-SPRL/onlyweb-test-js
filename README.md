@@ -19,3 +19,5 @@ Le calculateur de prix (index.html) sera adapté pour obtenir un fonctionnement 
 - Type de logement : Supprimer la proposition "Commerce, garage, entrepôt"
 
 Veiller à ce que le formulaire reste fonctionnel malgré ces suppressions, notamment à la soumission
+
+Démarrez de la branch "master" pour commencer à travailler ensuite créez une nouvelle branch à votre nom et travaillez uniquement sur cette branch
