@@ -1,0 +1,119 @@
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {}
+
+/*==========  Non-Mobile First Method  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1039px) {}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px) {}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 1025px) {}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 991px) {
+    .navbar{
+        float:none;
+        .navbar-toggler{
+            position: absolute;
+            right:0;
+            top:-130px;
+            background:@vert_dark url(../../img/menu.png) center center no-repeat;
+        }
+    }
+    #bannerBox{        
+        .slickItem{
+            img{
+                display: block;
+                height: 100%;
+                width: auto;
+            }
+        }
+    } 
+    #bgContact {
+        background: none;
+        #wrapContactForm {
+            padding: 30px;
+            background-color: #2B2B2B;
+        }  
+    
+    } 
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+    #header{
+        .navbar{
+            float:none;
+            .navbar-toggler{
+                position: absolute;
+                right:0;
+                top:-130px;
+                background:@vert_dark url(../../img/menu.png) center center no-repeat;
+            }
+        }
+        #quickContact{
+            a{
+                font-size:20px; 
+                &.cmdBtn{
+                    font-size:17px;
+                }
+        
+            }
+        }
+    
+    }
+    .btn-group, .btn-group-vertical{
+        display:block;
+    }
+
+    .cmdForm {
+        .btn-secondary {
+            width:100%;
+            text-align: left;
+            padding: 10px 20px;
+        }
+        .btn-secondary-ico{
+            width:100%;
+            text-align: left;
+            padding: 15px 20px;
+        }
+        #devisPreview{
+            padding:20px;
+            #wrapBoxPrix{
+                .boxPrix{
+                    border:none;
+                }
+            } 
+        }
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 479px) {
+    .navbar{
+        float:none;
+        .navbar-toggler{
+            position: absolute;
+            right:0;
+            top:-110px;
+            background:@vert_dark url(../../img/menu.png) center center no-repeat;
+        }
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 319px) {}

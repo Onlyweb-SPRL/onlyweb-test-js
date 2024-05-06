@@ -1,0 +1,535 @@
+:root {
+    --onlygreen: #217a56;
+}
+
+footer #footerBottom #infoPWB {
+    display: flex;
+    align-content: center;
+}
+
+footer #footerBottom #infoPWB ul {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+footer #footerBottom #infoPWB ul:first-child {
+    margin-right: 4em;
+}
+
+footer #footerBottom #infoPWB ul:first-child li:first-child b {
+    font-size: 20px;
+}
+
+footer #footerBottom #infoPWB ul:first-child li:not(:first-child) {
+    padding-bottom: .25em;
+}
+
+footer .num {
+    color: var(--onlygreen);
+}
+
+footer .btnLink {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background-color: var(--onlygreen);
+    color: #fff;
+    font-size: 17px;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: auto;
+    transition: background-color .4s ease-in-out, border .4s ease-in-out;
+}
+
+footer .btnLink span {
+    margin-top: .1em;
+    padding-left: .5em;
+}
+
+footer .btnLink:hover {
+    background-color: #31b680;
+    border: solid 2px #31b680;
+    text-decoration: none;
+}
+
+footer #footerBottom #linkList {
+    display: flex;
+    flex-direction: column;
+}
+
+footer #footerBottom #linkList ul:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: auto;
+}
+
+footer #footerBottom #linkList ul:last-child li:last-child {
+    display: flex;
+    align-items: center;
+}
+
+footer #footerBottom #linkList ul:last-child li:last-child span {
+    padding-right: .5em;
+}
+
+@media only screen and (max-width: 991px) {
+    footer #footerBottom #infoPWB {
+        flex-direction: column;
+    }
+
+    footer #footerBottom #infoPWB ul:first-child {
+        margin-right: 0;
+    }
+
+    footer #footerBottom #infoPWB ul {
+        align-self: flex-start;
+    }
+
+}
+
+p {
+    margin: 27px 0;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+h1 {
+    color: #2b2b2b;
+    font-size: 33px;
+    line-height: 40px;
+    margin: 0 0 30px 0;
+}
+
+.sep {
+    margin: 0 0 30px 0;
+}
+
+h2 {
+    color: #2c9b6b;
+    font-size: 25px;
+    line-height: 30px;
+    margin: 40px 0 30px 0;
+}
+
+h3 {
+    color: #2b2b2b;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 35px 0 35px 0;
+}
+
+a {
+    color: #2c9b6b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2c9b6b;
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 40px;
+}
+
+li {
+    padding: 0 0 0 15px;
+    margin: 0 0 20px 0;
+    line-height: 30px;
+}
+
+li::marker {
+    color: #2c9b6b;
+    font-size: 21px;
+}
+
+body {
+    font-family: 'Proxima Nova Rg';
+}
+
+
+table {
+    font-family: 'Proxima Nova Rg', Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #d2e1db;
+    vertical-align: top;
+    padding: 25px;
+}
+
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2c9b6b;
+    color: white;
+}
+
+footer #footerBottom #linkList ul {
+    padding: 0;
+}
+
+#wrapContactForm .wrapBtn .btnLink, .btnLink {
+    background-color: var(--onlygreen);
+    color: #fff;
+    border: solid 2px var(--onlygreen);
+    font-size: 17px;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: auto;
+    transition: background-color .4s ease-in-out, border .4s ease-in-out;
+}
+
+#wrapContactForm .wrapBtn .btnLink:hover, .btnLink:hover {
+    background-color: #31b680;
+    border: solid 2px #31b680;
+    color: #fff;
+    text-decoration: none;
+}
+
+#header #quickContact a.cmdBtn {
+    transition: background-color .4s ease-in-out, border .4s ease-in-out;
+}
+
+#header #quickContact a.cmdBtn:hover {
+    text-decoration: none;
+    background-color: #31b680;
+}
+
+#header .navbar .navbar-nav .nav-item.active {
+    padding: 0;
+}
+
+ul.navbar-nav li {
+    padding: 0;
+    margin: 0;
+}
+
+#header .navbar .navbar-nav a {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+#header .navbar .navbar-nav a:hover {
+    color: var(--onlygreen);
+    transition: color .4s ease-in-out;
+}
+
+footer {
+    padding: 50px 0 0 0;
+}
+
+#bannerBox .slickItem .slickItemDesc h1 {
+    background-color: transparent;
+    font-size: 36px;
+    line-height: 50px;
+    margin-bottom: 0px;
+}
+
+.dropdown-menu {
+    min-width: 22rem;
+    padding: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+#header .navbar .navbar-nav .dropdown-menu a {
+    color: rgba(255, 255, 255, 0.85);
+    padding-left: 10px;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 17px;
+
+}
+
+#header .navbar .navbar-nav .dropdown-menu a:hover {
+    color: #ffffff;
+    padding-left: 10px;
+    text-transform: none;
+}
+
+#header #logo img {
+    max-width: 215px;
+}
+
+@media only screen and (max-width: 991px) {
+    #bannerBox .slickItem .slickItemDesc h1 {
+        background-color: transparent;
+        font-size: 25px;
+        text-align: left;
+        line-height: 33px;
+        margin-bottom: 0px;
+    }
+
+    #bannerBox .slickItem .slickItemDesc p {
+        font-size: 22px;
+        padding: 10px;
+        text-align: left;
+    }
+
+    #header .navbar .navbar-nav .nav-item.active {
+        border-bottom: none;
+    }
+
+    #header .navbar .navbar-nav .nav-item.active a {
+        color: #217a56;
+    }
+}
+
+/*hover form fields*/
+.cmdForm .btn-secondary:not(:disabled):not(.disabled).active, .cmdForm .btn-secondary:not(:disabled):not(.disabled):active, .cmdForm .show > .btn-secondary.dropdown-toggle, .cmdForm .btn-secondary-ico:not(:disabled):not(.disabled).active, .cmdForm .btn-secondary-ico:not(:disabled):not(.disabled):active, .cmdForm .show > .btn-secondary-ico.dropdown-toggle {
+    font-weight: normal;
+}
+
+.btn-group-toggle label.btn:hover {
+    color: #2c9b6b;
+    background-color: #fff;
+    border-color: #2c9b6b;
+    cursor: pointer;
+    /*font-weight: bold;*/
+}
+
+/*Browser highlight*/
+*:focus {
+    outline: 0 none;
+    border: transparent;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-secondary.focus,
+.btn-secondary:focus {
+    box-shadow: none;
+}
+
+/*Fix css*/
+.cmdForm .choiceDevis,
+.cmdForm .context_option,
+.cmdForm .boxProd {
+    display: block;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#choice_maison .form-inline {
+    align-items: flex-start;
+}
+
+.form-inline .btn-group, .form-inline .btn-group-vertical {
+    display: block;
+}
+
+.form-inline .btn-group .btn {
+    width: fit-content;
+    display: inline-block;
+}
+
+.btn-group-toggle > .btn input[type=checkbox], .btn-group-toggle > .btn input[type=radio], .btn-group-toggle > .btn-group > .btn input[type=checkbox], .btn-group-toggle > .btn-group > .btn input[type=radio] {
+    all: initial;
+    width: 0;
+}
+
+.cmdForm .choiceDevis {
+}
+
+.cmdForm .choiceDevis,
+.cmdForm .choiceBien,
+.cmdForm .choiceDevis#choice_elec,
+.cmdForm .choiceDevis#choice_cit,
+.cmdForm .choiceDevis#choice_gaz {
+    background-color: white !important;
+    border: 1px solid #c9cee2;
+}
+
+.cmdForm .choiceDevis .form-inline .infoField {
+    min-width: fit-content;
+    font-weight: normal;
+}
+
+#choice_peb .btn-group .btn {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    width: fit-content;
+}
+
+.form-control[type="number"] {
+    min-width: 55px;
+    max-width: 150px;
+    min-height: 55px;
+}
+
+#devisPreview .wrapBoxPrix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0 2em;
+}
+
+#devisPreview .wrapBoxPrix .border-boxPrix {
+    min-width: 200px;
+    width: 200px;
+    max-width: 200px;
+}
+
+#devisPreview .wrapBoxPrix .border-boxPrix {
+    border-left: 1px solid #ececec;
+}
+
+#devisPreview .wrapBoxPrix .border-boxPrix[order="0"] {
+    border: none;
+    order: 0;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="1"] {
+    order: 1;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="2"] {
+    order: 2;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="3"] {
+    order: 3;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="4"] {
+    order: 4;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="5"] {
+    order: 5;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="6"] {
+    order: 6;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="7"] {
+    order: 7;
+}
+#devisPreview .wrapBoxPrix .border-boxPrix[order="8"] {
+    order: 8;
+}
+
+
+.ifPEB {
+    /*display: none;*/
+}
+
+#cit_capacite {
+    min-width: 95px;
+}
+
+#choice_peb > .labelGrey,
+#choice_peb > .resetInput {
+    margin-bottom: 0;
+}
+
+.missing {
+    border-color: orange !important;
+}
+
+/*#devisPreview .wrapBoxPrix .boxPrix:not(.hide) {*/
+/*    border: none;*/
+/*}*/
+
+#devisPreview .wrapBoxPrix .boxPrix .icosvg {
+    display: block;
+    margin: 0 auto .5em;
+}
+
+.cmdForm #devisPreview {
+    padding-top: 3em;
+}
+
+datalist#zip option span::first-letter {
+    text-transform: capitalize;
+}
+
+.form-control {
+    font-size: 17px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+/* global classes */
+.forPro {
+    display: flex !important;
+}
+
+.forPro-hide {
+    display: none !important;
+}
+
+.location-hide,
+.hide {
+    display: none !important;
+}
+
+/*Icon fix*/
+.cmdForm .choiceDevis .labelGrey {
+    margin-top: 0;
+}
+
+/* Scroll */
+.cmdForm {
+    padding-bottom: 250px;
+}
+
+@media all and (max-width: 767px) {
+    .form-inline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-inline label {
+        margin: 0.5em 0;
+    }
+
+    #contactData > .container {
+        padding: 1em 0;
+    }
+
+    #contactData .form-inline {
+        flex-direction: row;
+    }
+
+    #contactData .form-inline .form-control {
+        width: 100%;
+    }
+
+    .cmdForm .btn-secondary:last-child {
+        margin-bottom: 0;
+    }
+
+    .form-control {
+        min-height: 47px;
+    }
+}
+
+#header .navbar .navbar-nav {
+    justify-content: left;
+}
+
+#header .navbar .navbar-nav .nav-item {
+    margin: 0 20px;
+}

@@ -1,0 +1,696 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Proxima Nova Lt';
+    background-color:@vert_light;
+    font-size:@texts;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    line-height:auto;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight:bold;
+}
+h1{
+    font-size:@h1s;
+}
+h2{
+    font-size:@h2s;
+}
+h3{
+    font-size:@h3s;
+}
+h4{
+    font-size:@h4s;
+}
+h5{
+    font-size:@h5s;
+}
+h6{
+    font-size:@h6s;
+}
+a:hover{
+    text-decoration: none;
+}
+//CLASS
+.sep{
+    display:block;
+    height:1px;
+    width:30px;
+    background-color:@vert_dark;
+    margin:15px 0;
+    padding:0;
+}
+.btnLink{
+    display:inline-block;
+    padding:10px;
+    border:solid 2px @vert_dark;
+    border-radius:10px;
+    color:@vert_dark;
+    font-size:@texts;
+    font-family: 'Chakra Petch', sans-serif;
+    text-transform: uppercase;
+    &:hover{
+        background-color: @vert_dark;
+        color:#fff;
+    }
+}
+.img-responsive{
+    max-width:100%;
+}
+//HEADER
+#header{
+    position: relative;
+    #logo{
+        margin:25px 0;
+        img{
+            max-width:100%;
+            
+        }
+    }
+    #quickContact{
+        font-family: 'Chakra Petch', sans-serif;
+        a{
+            display: block;
+            font-size:24px; 
+            &.phoneBtn{
+                background:url(../../img/icon_tel.png) left center no-repeat;
+                color:@vert_dark;
+                padding-left:30px;
+                margin-top:20px; 
+                margin-bottom:20px; 
+                &:hover{
+                    color:@gris_darker;
+                }    
+            }
+            &.cmdBtn{
+                color:#fff;
+                background-color:@vert_dark;
+                border-radius:10px;
+                text-transform: uppercase;
+                padding:10px;
+                text-align: center;
+                font-size:20px;
+                line-height:20px;
+                &:hover{
+                    background-color:@gris_darker;
+                } 
+            }
+    
+        }
+    }
+    .navbar{
+        padding-bottom:0;
+       .navbar-nav{
+            width: 100%;
+            display:flex;
+            justify-content: space-evenly;
+            a{
+                font-family: 'Chakra Petch', sans-serif;
+                color:@gris_dark;
+                text-transform: uppercase;
+                font-size:@texts;
+                
+                 
+            }
+            .nav-item {
+                border-bottom:solid 5px @vert_light;
+                &.active{
+                    border-bottom:solid 5px @vert_dark;
+                }
+            }
+            .dropdown-menu{
+                background-color:@vert_dark;
+                a{
+                    color:#fff;
+                    padding-left:10px;
+                }
+            }
+        } 
+    }
+}
+//FOOTER
+footer{
+    background-color:@gris_darker;
+    color:@gris_med;
+    padding:65px 0;
+    a{
+        color:@gris_med;
+    }
+    #footerBottom{
+        #infoPWB{
+            ul{
+                list-style:none;
+                li{
+                    float:left;
+                    padding:0 10px 10px 0;
+                   
+                    b{
+                       color:#fff;
+                   } 
+                }
+            }
+        }
+        #linkList{
+            ul{
+                list-style:none;
+            }
+        }    
+    }
+}
+//BANNER
+#bannerBox{
+    padding-left:0;
+    padding-right:0;
+    margin-bottom:60px;
+    overflow: hidden;
+    .slickItem{
+        position:relative;
+        img{
+            display: block;
+            width: 100%;
+        }
+        .slickItemDesc{
+            position:absolute;
+            width: 100%;
+            height:100%;
+            left:0;
+            top:0;
+            font-family: 'Chakra Petch', sans-serif;
+            text-align:center;
+            padding:100px 15px;
+            h1,h2{
+                color:#fff;
+                background-color:@gris_dark;
+                display: inline-block;
+                padding:10px;
+                font-size:@h1s;
+                margin-bottom:20px;
+            }
+            p{
+                color:#fff;
+                font-size:@h3s;
+            }
+        }
+    }
+    
+}
+
+#smallBannerBox{
+    padding-left:0;
+    padding-right:0;
+    
+    overflow: hidden;
+    .slickItem{
+        position:relative;
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+//CONTENT
+#reaBox{
+    margin-bottom:75px;
+    img{
+        display:block;
+        margin:0 auto 30px;
+    }
+    p{
+        font-weight:bold;
+    }
+}
+#boxActif{
+    margin-bottom:75px;
+}
+#bgContact{
+    background:url(../../img/bg_contact.gif) center top repeat-y;
+    background-size:100%;
+    overflow: hidden;
+    .partLeft{
+        padding:60px 0;
+        .infoContact{
+            padding:0 30px;
+            border-left:solid 3px @gris_light;
+            margin:30px 0;
+            a{
+                color:@vert_dark;
+            }
+        }
+    }
+}
+
+#wrapContactForm{
+    padding:60px 0 60px 15px;
+    h2{
+         color:#fff;
+         
+    }
+    p{
+        color:#fff;
+        margin-bottom:20px;
+        a{
+            color:@vert_med;
+        }
+    }
+    .text-input, textarea{
+        border:solid 2px #dadada;
+        display:block;
+        width:100%;
+        padding:10px;
+        margin:20px 0;
+        color:@vert_med;
+        border-radius:15px;
+    }
+    .text-input:hover, textarea:hover,.text-input:focus, textarea:focus{
+        border:solid 2px @vert_med;
+        box-shadow:0;
+    }
+    textarea{
+        min-height:200px;
+        padding-top:17px
+    }
+    .wrapBtn{
+        text-align:right;
+        .btnLink{
+            background-color:@vert_med;
+            color:#fff;
+            &:hover{
+                background-color:@vert_light;
+                color:@vert_dark;
+            }
+        }
+    }
+    label{
+        color:#fff;
+        text-align:right;
+        display:block;
+        margin-bottom:20px;
+
+        input{
+            margin-right:10px
+        }
+        a{
+            color:@vert_med
+        }
+    }
+}
+
+#form_validate_1{padding-left:15px}
+.recaptcha{
+    text-align:right;
+    .g-recaptcha{display:inline-block}
+}
+
+
+.contentBox{
+    padding:60px 0;
+}
+
+.cmdForm{
+    background-color:@gris_lighter;
+    padding-top:30px;
+    padding-bottom:30px;
+    .icosvg{
+        display:inline-block;
+        width: 30px;
+        height: 30px;
+        margin-bottom: -10px;
+        margin-right:20px;
+    }
+    .infoField{
+        margin-right:20px;
+    }
+    .infoField_w{
+        width:150px;
+        justify-content: left !important;
+        text-align: left;
+        font-weight: bold;
+    }
+    .labelGreen{
+        color:@vert_med;
+        font-weight:bold;
+        font-size: @h3s;
+        margin-bottom:10px;
+        margin-top:10px;
+        margin-right:20px;
+    }
+    .form-inline{
+        .infoField{
+            font-weight:bold;
+        }
+    }
+    textarea{
+        width:100%;
+    }
+    .wrapBtn{
+        text-align:right;
+        .btnLink{
+            background-color:@vert_med;
+            color:#fff;
+            &:hover{
+                background-color:@vert_light;
+                color:@vert_dark;
+            }
+        }
+    }
+    .btn-secondary {
+        color: @gris_darker;
+        background-color: #fff;
+        border-color: @gris_light;
+        margin-right:10px;
+        margin-bottom:10px;
+        padding:15px 35px;
+        font-size:@texts;
+    }
+    .btn-secondary-ico {
+        color: @gris_darker;
+        background-color: #fff;
+        border-color: @gris_light;
+        margin-right:10px;
+        margin-bottom:10px;
+        padding:25px 35px;
+        font-size:@texts;
+    }
+    .context_option{
+        display:none;
+    }
+    .boxProd{
+        display:none;
+    }
+    .s_peb{
+        background:url(../../img/icone-controle-peb.svg) center center no-repeat;
+    }
+    .s_elec{
+        background:url(../../img/icone-controle-electrique.svg) center center no-repeat;
+    }
+    .s_cit{
+        background:url(../../img/icone-controle-citerne.svg) center center no-repeat;
+    }
+    .s_gaz{
+        background:url(../../img/icone-controle-gaz.svg) center center no-repeat;
+    }
+    .s_etat{
+        background:url(../../img/etat-lieux.svg) center center no-repeat;
+    }
+    .s_blower{
+        background:url(../../img/blower-door.svg) center center no-repeat;
+    }
+    .s_drone{
+        background:url(../../img/drone.svg) center center no-repeat;
+    }
+    .s_2d{
+        background:url(../../img/2D.svg) center center no-repeat;
+    }
+    .s_3d{
+        background:url(../../img/3D.svg) center center no-repeat;
+    }
+    .s_geo{
+        background:url(../../img/geometre.svg) center center no-repeat;
+    }
+    .s_secu{
+        background:url(../../img/securite.svg) center center no-repeat;
+    }
+    .s_certibeau{
+        background:url(../../img/certibeau.svg) center center no-repeat;
+    }
+
+    .b_maison{
+        background:url(../../img/icone-maison.svg) center center no-repeat;
+    }
+    .b_appart{
+        background:url(../../img/icone-appartement.svg) center center no-repeat;
+    }
+    .b_immeuble{
+        background:url(../../img/icone-immeuble-rapport.svg) center center no-repeat;
+    }
+    .b_commerce{
+        background:url(../../img/b_commerce.svg) center center no-repeat;
+    }
+    .a_simple{
+        background:url(../../img/icone-appartement-simple.svg) center center no-repeat;
+    }
+    .a_duplex{
+        background:url(../../img/icone-duplex.svg) center center no-repeat;
+    }
+    .a_triplex{
+        background:url(../../img/icone-triplex.svg) center center no-repeat;
+    }
+    .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle,
+    .btn-secondary-ico:not(:disabled):not(.disabled).active, .btn-secondary-ico:not(:disabled):not(.disabled):active, .show>.btn-secondary-ico.dropdown-toggle {
+        color: @vert_med;
+        background-color: #fff;
+        border-color:@vert_med;
+        font-weight:bold;
+        margin-right:10px;
+        .s_peb{
+            background:url(../../img/icone-controle-peb-vert.svg) center center no-repeat;
+        }
+        .s_elec{
+            background:url(../../img/icone-controle-electrique-vert.svg) center center no-repeat;
+        }
+        .s_cit{
+            background:url(../../img/icone-controle-citerne-vert.svg) center center no-repeat;
+        }
+        .s_gaz{
+            background:url(../../img/icone-controle-gaz-vert.svg) center center no-repeat;
+        }
+        .s_etat{
+            background:url(../../img/etat-lieux-vert.svg) center center no-repeat;
+        }
+        .s_blower{
+            background:url(../../img/blower-door-vert.svg) center center no-repeat;
+        }
+        .s_drone{
+            background:url(../../img/drone-vert.svg) center center no-repeat;
+        }
+        .s_2d{
+            background:url(../../img/2D-vert.svg) center center no-repeat;
+        }
+        .s_3d{
+            background:url(../../img/3D-vert.svg) center center no-repeat;
+        }
+        .s_geo{
+            background:url(../../img/geometre-vert.svg) center center no-repeat;
+        }
+        .s_secu{
+            background:url(../../img/securite-vert.svg) center center no-repeat;
+        }
+        .s_certibeau{
+            background:url(../../img/certibeau-vert.svg) center center no-repeat;
+        }
+        .b_maison{
+            background:url(../../img/icone-maison-vert.svg) center center no-repeat;
+        }
+        .b_appart{
+            background:url(../../img/icone-appartement-vert.svg) center center no-repeat;
+        }
+        .b_immeuble{
+            background:url(../../img/icone-immeuble-rapport-vert.svg) center center no-repeat;
+        }
+        .b_commerce{
+            background:url(../../img/b_commerce-vert.svg) center center no-repeat;
+        }
+        
+    }
+    .choiceDevis{
+        background-color: #fff;
+        border:solid 1px @vert_med;
+        border-radius:5px;
+        margin:20px 0;
+        padding:20px 20px 20px 70px;
+        display:none;
+        .labelGrey{
+            font-size:19px;
+            font-weight:bold;
+        }
+        .form-inline{
+            margin-bottom:20px;
+            .infoField{
+                font-weight:bold;
+            }
+        }
+        
+    }
+    #choice_peb{
+        background:url(../../img/icone-controle-peb.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_elec{
+        background:url(../../img/icone-controle-electrique.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_cit, #choice_certimazout{
+        background:url(../../img/icone-controle-citerne.svg) left 20px top 20px no-repeat;
+        background-size:auto 20px;
+    }
+    #choice_gaz, #choice_certigaz{
+        background:url(../../img/icone-controle-gaz.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_etat{
+        background:url(../../img/etat-lieux.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_blower{
+        background:url(../../img/blower-door.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_drone{
+        background:url(../../img/drone.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_2d{
+        background:url(../../img/2D.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_3d{
+        background:url(../../img/3D.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_geo{
+        background:url(../../img/geometre.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_secu{
+        background:url(../../img/securite.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+
+    #choice_certibeau{
+        background:url(../../img/certibeau.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+
+
+    #choice_maison{
+        background:url(../../img/icone-maison.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_appart{
+        background:url(../../img/icone-appartement.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_immeuble{
+        background:url(../../img/icone-immeuble-rapport.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #choice_commerce{
+        background:url(../../img/b_commerce.svg) left 20px top 20px no-repeat;
+        background-size:auto 30px;
+    }
+    #devisPreview{
+        background-color: #fff;
+        border:solid 1px @vert_med;
+        border-radius:5px;
+        margin:20px 0;
+        padding:20px 20px 20px 70px;
+        text-align: center;
+        #wrapBoxPrix{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .boxPrix{
+                padding:70px 50px 0 50px;
+                display:none;
+                border-right:solid 1px @gris_light;
+                &:last-child{
+                    border:none;
+                }
+            }
+            .boxPrix_peb{
+                background:url(../../img/icone-controle-peb.svg) center top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_elec{
+                background:url(../../img/icone-controle-electrique.svg) center top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_cit, .boxPrix_certimazout{
+                background:url(../../img/icone-controle-citerne.svg) center top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_gaz, .boxPrix_certigaz{
+                background:url(../../img/icone-controle-gaz.svg) center top 20px no-repeat;
+                background-size:auto 30px;
+            }
+
+
+            .boxPrix_etat{
+                background:url(../../img/etat-lieux.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_blower{
+                background:url(../../img/blower-door.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_drone{
+                background:url(../../img/drone.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_2d{
+                background:url(../../img/2D.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_3d{
+                background:url(../../img/3D.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_geo{
+                background:url(../../img/geometre.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_secu{
+                background:url(../../img/securite.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+            .boxPrix_certibeau{
+                background:url(../../img/certibeau.svg) center  top 20px no-repeat;
+                background-size:auto 30px;
+            }
+
+
+        }
+    }
+    .forPro{
+        display:none;
+    }
+}
+
+
+//ANIMATION
+.hidden {
+    opacity: 0;
+}
+.fade-in-element {
+    animation: appear 2s;
+}
+@-webkit-keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+} 
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-webkit-keyframes slideVerti {
+    from {opacity: 0;top: 120%;}
+    to {opacity: 1;top: 50%;}
+} 
+@keyframes slideVerti {
+    from {opacity: 0;top: 120%;}
+    to {opacity: 1;top: 50%;}
+}
+
+@-webkit-keyframes slideHori {
+    from {opacity: 0;top: -100%;}
+    to {opacity: 1;top: 0;}
+} 
+@keyframes slideHori {
+    from {opacity: 0; top: -100%;}
+    to {opacity: 1;top: 0;}
+}
+
+.googlemap{height:550px;background:url(../img/loader.svg) center center no-repeat #2e2e33}
