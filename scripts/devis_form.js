@@ -26,208 +26,201 @@ $(document).ready(function () {
 
         resetForm('all', false);
 
-        $('#selectZip').removeClass('hide');
-
-        $('#selectControleType').addClass('hide');
+        $('#logementType').removeClass('hide');
 
         var country = $(this).val();
-        updateTotal('country', country, false, false);
 
-        scrollIntoNextElement('selectZip');
+        updateTotal('country', country, false, false);
 
     });
 
     //check cities
-    $("#controle_cp").keyup(function () {
-        var cpControle = $(this).val();
-        var country = $('input[name="country"]:checked').val();
-        var zipOptions = $('datalist#zip');
-        if (cpControle != '') {
-            jQuery.ajax({
-                url: "./forms/get_cities.php",
-                data: {
-                    cp: cpControle,
-                    country: country,
-                },
-                dataType: "json",
-                type: "POST",
-                success: function (data) {
-                    // WALLONIE CHECK
-                    $('.wallonie-only').remove();
-                    var objectTotal = getTotal();
-                    if (data == false && objectTotal['country'] == 'BE') {
-                        $('<span class="wallonie-only" style="color: red">Nous travaillons uniquement en Wallonie</span>').insertBefore(zipOptions);
-                        $(this).parent().next().addClass('hide');
-                        zipOptions.html('');
+    // $("#controle_cp").keyup(function () {
+    //     var cpControle = $(this).val();
+    //     var country = $('input[name="country"]:checked').val();
+    //     var zipOptions = $('datalist#zip');
+    //     if (cpControle != '') {
+    //         jQuery.ajax({
+    //             url: "./forms/get_cities.php",
+    //             data: {
+    //                 cp: cpControle,
+    //                 country: country,
+    //             },
+    //             dataType: "json",
+    //             type: "POST",
+    //             success: function (data) {
+    //                 // WALLONIE CHECK
+    //                 $('.wallonie-only').remove();
+    //                 var objectTotal = getTotal();
+    //                 if (data == false && objectTotal['country'] == 'BE') {
+    //                     $('<span class="wallonie-only" style="color: red">Nous travaillons uniquement en Wallonie</span>').insertBefore(zipOptions);
+    //                     $(this).parent().next().addClass('hide');
+    //                     zipOptions.html('');
 
-                    } else {
-                        $('.wallonie-only').remove();
-                        $(this).parent().next().removeClass('hide');
+    //                 } else {
+    //                     $('.wallonie-only').remove();
+    //                     $(this).parent().next().removeClass('hide');
+    //                     var options = '';
 
-                        var options = '';
+    //                     for (var i = 0; i < data.length; i++) {
+    //                         options += '<option value="' + data[i]['city_cp'] + ' ' + data[i]['city_loca'].toLowerCase().capitalize() + '">' + data[i]['city_cp'] + ' <span>' + data[i]['city_loca'].toLowerCase().capitalize() + '</span></option>';
+    //                     }
 
-                        for (var i = 0; i < data.length; i++) {
-                            options += '<option value="' + data[i]['city_cp'] + ' ' + data[i]['city_loca'].toLowerCase().capitalize() + '">' + data[i]['city_cp'] + ' <span>' + data[i]['city_loca'].toLowerCase().capitalize() + '</span></option>';
-                        }
+    //                     zipOptions.html(options);
+    //                 }
+    //             },
+    //             error: function (data) {
+    //             }
+    //         });
+    //     } else {
+    //         // resetForm();
+    //         // resetCalculDevis();
+    //         $('#selectControleType').addClass('hide');
 
-                        zipOptions.html(options);
-                    }
-                },
-                error: function (data) {
-                }
-            });
-        } else {
-            // resetForm();
-            // resetCalculDevis();
-            $('#selectControleType').addClass('hide');
+    //     }
 
-        }
+    // });
 
-    });
+    // $("#controle_cp").change(function () {
+    //     // WALLONIE CHECK
+    //     if ($('.wallonie-only').length <= 0) {
 
-    $("#controle_cp").change(function () {
-        // WALLONIE CHECK
-        if ($('.wallonie-only').length <= 0) {
+    //         var cpControle = $(this).val();
+    //         var country = $('input[name="country"]:checked').val();
 
-            var cpControle = $(this).val();
-            var country = $('input[name="country"]:checked').val();
-            if (cpControle != '') {
-                $(this).parent().next().removeClass('hide');
-                jQuery.ajax({
-                    url: "./forms/get_regio.php",
-                    data: {
-                        cp: cpControle,
-                        country: country,
-                    },
-                    type: "POST",
-                    success: function (data) {
-                        $('#controle_regio').val(data);
-                        updateTotal('region', data, false, false);
-                    },
-                    error: function (data) {
-                    }
-                });
-                $('#selectControleType').removeClass('hide');
+    //         if (cpControle != '') {
+    //             $(this).parent().next().removeClass('hide');
+    //             jQuery.ajax({
+    //                 url: "./forms/get_regio.php",
+    //                 data: {
+    //                     cp: cpControle,
+    //                     country: country,
+    //                 },
+    //                 type: "POST",
+    //                 success: function (data) {
+    //                     $('#controle_regio').val(data);
+    //                     updateTotal('region', data, false, false);
+    //                 },
+    //                 error: function (data) {
+    //                 }
+    //             });
 
-            } else {
-                $('#selectControleType').addClass('hide');
+    //             $('#selectControleType').removeClass('hide');
 
-            }
+    //         } else {
+    //             $('#selectControleType').addClass('hide');
+    //         }
 
-
-            var zipcode = $(this).val();
-            updateTotal('zipcode', zipcode, false, false);
-            resetForm('zip_control', false);
-            scrollIntoNextElement('selectControleType');
-
-
-        }
-    });
+    //         var zipcode = $(this).val();
+    //         updateTotal('zipcode', zipcode, false, false);
+    //         resetForm('zip_control', false);
+    //         scrollIntoNextElement('selectControleType');
+    //     }
+    // });
 
     // Select "Contexte du controle"
-    $('#selectControleType input[name="context_control"]').on('change', function () {
-        resetForm('context_control', false);
+    // $('#selectControleType input[name="context_control"]').on('change', function () {
+    //     resetForm('context_control', false);
 
-        if ($(this).val() == 'location') {
-            $('.boxProd label.context_option:not(#produit_peb_label)').addClass('location-hide');
-            $('.boxProd label.context_option:not(#produit_peb_label) input').attr('disabled', true);
-        } else {
-            $('.boxProd label.context_option:not(#produit_peb_label)').removeClass('location-hide');
-            $('.boxProd label.context_option:not(#produit_peb_label) input').attr('disabled', false);
-        }
+    //     if ($(this).val() == 'location') {
+    //         $('.boxProd label.context_option:not(#produit_peb_label)').addClass('location-hide');
+    //         $('.boxProd label.context_option:not(#produit_peb_label) input').attr('disabled', true);
+    //     } else {
+    //         $('.boxProd label.context_option:not(#produit_peb_label)').removeClass('location-hide');
+    //         $('.boxProd label.context_option:not(#produit_peb_label) input').attr('disabled', false);
+    //     }
 
-        $('.boxProd').removeClass('hide');
-        var context_control = $(this).val();
-        updateTotal('context_control', context_control, false, false);
-        scrollIntoNextElement('selectPrestations');
-
-    });
+    //     $('.boxProd').removeClass('hide');
+    //     var context_control = $(this).val();
+    //     updateTotal('context_control', context_control, false, false);
+    //     scrollIntoNextElement('selectPrestations');
+    // });
 
     // Select "Prestations"
-    $('.boxProd input').on('change', function () {
-        var idParent = '#' + $(this).parent()[0].getAttribute('id');
-        resetForm('prestation_control', idParent);
-        var result = showPrestationSub($(this)[0], false);
-        var prestations = $(this).attr('id');
-        var total = getTotal();
+    // $('.boxProd input').on('change', function () {
+    //     var idParent = '#' + $(this).parent()[0].getAttribute('id');
+    //     resetForm('prestation_control', idParent);
+    //     var result = showPrestationSub($(this)[0], false);
+    //     var prestations = $(this).attr('id');
+    //     var total = getTotal();
 
-        updateTotal('prestations;;' + prestations, '', true, false);
-        var elementID = prestations.replace('produit_', 'choice_');
-        scrollIntoNextElement(elementID);
+    //     updateTotal('prestations;;' + prestations, '', true, false);
+    //     var elementID = prestations.replace('produit_', 'choice_');
+    //     scrollIntoNextElement(elementID);
 
-        var notChecked = $('.boxProd input:not(:checked)');
-        if ($('.boxProd input:checked').length > 0) {
-            var total = getTotal();
+    //     var notChecked = $('.boxProd input:not(:checked)');
+    //     if ($('.boxProd input:checked').length > 0) {
+    //         var total = getTotal();
 
-            if (total['prestations']) {
-                checkIfIsPrestationIsSelected(total, notChecked)
-                var total = getTotal();
-                if ('produit_peb' in total['prestations']) {
-                    resetForm('peb', false);
-                } else {
-                    resetForm('no_peb', false);
-                }
-            } else {
-                resetForm('no_prestation', false);
-            }
-        } else {
-            resetForm('no_prestation', false);
-            updateTotal('prestations;;' + prestations, '', false, true);
-        }
+    //         if (total['prestations']) {
+    //             checkIfIsPrestationIsSelected(total, notChecked)
+    //             var total = getTotal();
+    //             if ('produit_peb' in total['prestations']) {
+    //                 resetForm('peb', false);
+    //             } else {
+    //                 resetForm('no_peb', false);
+    //             }
+    //         } else {
+    //             resetForm('no_prestation', false);
+    //         }
+    //     } else {
+    //         resetForm('no_prestation', false);
+    //         updateTotal('prestations;;' + prestations, '', false, true);
+    //     }
 
-    });
+    // });
 
     // INPUTS FROM PRESTATIONS
-    $('.choiceDevis:not(.choiceBien) .resetInput input').on('change', function () {
-        resetForm('change_inputs_devis', false);
-        var parent = $(this).closest('.choiceDevis');
-        var parentId = parent.attr('id');
-        var choice = parentId.replace('choice', 'produit');
+    // $('.choiceDevis:not(.choiceBien) .resetInput input').on('change', function () {
+    //     resetForm('change_inputs_devis', false);
+    //     var parent = $(this).closest('.choiceDevis');
+    //     var parentId = parent.attr('id');
+    //     var choice = parentId.replace('choice', 'produit');
 
-        var obj = {};
+    //     var obj = {};
 
-        if (parentId == 'choice_elec') {
-            var inputValue = $('#' + parentId + ' input[type="number"]');
-            var value = inputValue[0].value;
-            var currentId = inputValue[0].getAttribute('name');
-        }
+    //     if (parentId == 'choice_elec') {
+    //         var inputValue = $('#' + parentId + ' input[type="number"]');
+    //         var value = inputValue[0].value;
+    //         var currentId = inputValue[0].getAttribute('name');
+    //     }
 
-        if (parentId == 'choice_cit' || parentId == 'choice_gaz') {
-            var inputValue = $('#' + parentId + ' input[type="number"]');
-            var checked = $('#' + parentId + ' input:checked');
-            if (checked[0]) {
-                var currentId = checked.attr('id');
-                var value = 0;
-            }
-            if (inputValue[0]) {
-                var value = inputValue[0].value;
-            }
-        }
-        if (typeof currentId != "undefined") {
-            obj = {[currentId]: value};
-        }
+    //     if (parentId == 'choice_cit' || parentId == 'choice_gaz') {
+    //         var inputValue = $('#' + parentId + ' input[type="number"]');
+    //         var checked = $('#' + parentId + ' input:checked');
+    //         if (checked[0]) {
+    //             var currentId = checked.attr('id');
+    //             var value = 0;
+    //         }
+    //         if (inputValue[0]) {
+    //             var value = inputValue[0].value;
+    //         }
+    //     }
+    //     if (typeof currentId != "undefined") {
+    //         obj = {[currentId]: value};
+    //     }
 
-        updateTotal('prestations;;' + choice, obj, true, false);
-        var total = getTotal();
-        var missingFields = checkIfIsPrestationIsNotEmpty(total);
-        var missingLogementChoices = checkIfIsTypeLogementIsNotEmpty(total);
-        if (!missingFields && !missingLogementChoices) {
-            resetForm('show_btn', false);
-            scrollIntoNextElement('wrapBoxPrix');
-        }
+    //     updateTotal('prestations;;' + choice, obj, true, false);
+    //     var total = getTotal();
+    //     var missingFields = checkIfIsPrestationIsNotEmpty(total);
+    //     var missingLogementChoices = checkIfIsTypeLogementIsNotEmpty(total);
+    //     if (!missingFields && !missingLogementChoices) {
+    //         resetForm('show_btn', false);
+    //         scrollIntoNextElement('wrapBoxPrix');
+    //     }
 
-    });
+    // });
 
     // Select/Deselect "Type du logement"
     $('.classic label.logementType').on('click', function () {
         if ($(this).hasClass('active')) {
+
             // click on active type de bien -> unselect it
             updateTotal('bien_type', '', false, true);
 
             $(this).removeClass('active');
             $(this).find('input').attr('checked', false);
             resetForm('choice_type_bien', false);
-
         }
     });
 
@@ -236,27 +229,39 @@ $(document).ready(function () {
         resetForm('choice_type_bien', false);
 
         // Type de la prestation
-        if ($('.boxProd input:checked').length > 0) {
-            var prestations = $('.boxProd input:checked');
-            for (var i = 0; i < prestations.length; i++) {
-                var which = showPrestationSub(prestations[i], true, false);
-                if (which != '') {
-                    $('#' + which + ' .choiceDevis').addClass('hide');
-                }
-                // Type de logement
-                if ($('.classic > .btn-group-toggle input:checked').length > 0) {
-                    var type = $('.classic input:checked');
-                    var typeBuilding = type[0].getAttribute('data-id');
-                    if ($('#' + typeBuilding).length > 0) {
-                        $('#' + typeBuilding).removeClass('hide');
-                    }
-                    if ($('#' + typeBuilding).length == 0) {
-                        resetForm('show_btn', false);
-                    }
-                }
+        // if ($('.boxProd input:checked').length > 0) {
+        //     var prestations = $('.boxProd input:checked');
+        //     for (var i = 0; i < prestations.length; i++) {
+        //         var which = showPrestationSub(prestations[i], true, false);
+        //         if (which != '') {
+        //             $('#' + which + ' .choiceDevis').addClass('hide');
+        //         }
+        //         // Type de logement
+        //         if ($('.classic > .btn-group-toggle input:checked').length > 0) {
+        //             var type = $('.classic input:checked');
+        //             var typeBuilding = type[0].getAttribute('data-id');
+        //             if ($('#' + typeBuilding).length > 0) {
+        //                 $('#' + typeBuilding).removeClass('hide');
+        //             }
+        //             if ($('#' + typeBuilding).length == 0) {
+        //                 resetForm('show_btn', false);
+        //             }
+        //         }
+        //     }
+        // } else {
+        //     resetForm('no_choice_type_bien', false);
+        // }
+
+        // Type de logement
+        if ($('.classic > .btn-group-toggle input:checked').length > 0) {
+            var type = $('.classic input:checked');
+            var typeBuilding = type[0].getAttribute('data-id');
+            if ($('#' + typeBuilding).length > 0) {
+                $('#' + typeBuilding).removeClass('hide');
             }
-        } else {
-            resetForm('no_choice_type_bien', false);
+            if ($('#' + typeBuilding).length == 0) {
+                resetForm('show_btn', false);
+            }
         }
 
         var bien_type = $(this).attr('data-id');

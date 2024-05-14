@@ -1,8 +1,9 @@
 <?PHP
 
-//$db_host = 'localhost';
-//$db_name = 'onlyweb-test';
-//$db_login = 'debian-sys-maint';
-//$db_pwd = '2Rtr7muTOEW9I2dQ';
+$db_host = 'localhost';
+$db_name = 'onlyweb_test_js';
+$db_login = 'candidat_chez_onlyweb';
+$db_pwd = 'X/Gfc4X6AObr[MOv';
 
 ?>
+

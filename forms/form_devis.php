@@ -1,11 +1,13 @@
 <?php
 $lg;
+
 if (isset($_POST['lg'])) {
     $lg = $_POST['lg'];
 } else {
     $lg = 'fr';
 }
 
+die();
 
 include('../inc/functions_site.php');
 include('../inc/config.php');
@@ -16,6 +18,8 @@ use PHPMailer\PHPMailer\Exception;
 require '../inc/PHPMailer/src/Exception.php';
 require '../inc/PHPMailer/src/PHPMailer.php';
 #require '../inc/PHPMailer/src/SMTP.php';
+
+die();
 
 //START CONTENT
 $mail_response;
@@ -40,7 +44,7 @@ if (isset($_POST['client_name'])) {
         </td>
         <td width="350" align="left" style="border:solid 1px #ccc;">
             <p style="font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#313131;">
-            $client_name
+                $client_name
             </p>
         </td>
         <td width="70"><img src="$project_url/img/mail/blank.png" alt=" " style="display: block;" width="70" height="30"  /></td>
